@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "commonjs",
+    "module": "system",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true, 
-    "outDir": "../proj1out"
+    "suppressImplicitAnyIndexErrors": true
   }, 
- "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/*.ts", 
-        "!./node_modules/**/**/*.ts",
-        "!./node_modules/**/**/**/*.ts",
-        "!./server/types/**/*.ts"]
+ "exclude" :[
+   "node_modules"
+ ]
       }
