@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
+import {Component, OnInit, Input, Output, EventEmitter} from 'angular2/core';
 
 import { iCurrentUser}  from './currentuser';
 
@@ -24,6 +24,7 @@ import { iCurrentUser}  from './currentuser';
 
 export class LoginComponent implements OnInit {
     @Output() userLoggedIn: EventEmitter<any> = new EventEmitter();
+    @Input() parent: string;
     public title = 'Login';
 
     user: iCurrentUser;
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         this.user  = {isAuthed:false, isValid:false, extId:""}
+        this.title += " " + this.parent;
     }
 
     validateUser() {

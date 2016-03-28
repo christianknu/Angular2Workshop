@@ -8,7 +8,7 @@ import {iCurrentUser}  from './currentuser'
   selector: 'my-app',
   template: `<div class="container">
       <h2 class="form-signin-heading">{{title}}</h2>
-    <my-login (userLoggedIn)=updateUser($event) [ngClass]="{xinvisible:user.isAuthed}"></my-login>
+    <my-login (userLoggedIn)=updateUser($event) parent="Tonys Galaxy" [ngClass]="{xinvisible:user.isAuthed}"></my-login>
 	<div [ngClass]="{xinvisible:!user.isAuthed}" class="container-fluid"> I know you, {{user.extId}} of course :)  </div>
   </div>
   `,
