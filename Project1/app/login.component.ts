@@ -25,7 +25,7 @@ import { iCurrentUser}  from './currentuser';
 export class LoginComponent implements OnInit {
     @Output() userLoggedIn: EventEmitter<any> = new EventEmitter();
     @Input() parent: string;
-   
+
     public title = 'Login';
 
     user: iCurrentUser;
