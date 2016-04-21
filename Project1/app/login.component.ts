@@ -11,13 +11,12 @@ import { iCurrentUser}  from './currentuser';
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="text" class="form-control" placeholder="id"  [(ngModel)]="user.extId" required autofocus />
             <button class="btn btn-lg btn-primary btn-block" (click)="validateUser()" type="submit">Sign in</button>
-            <div [ngClass]="{xinvisible:user.isValid}">{{user.validationError}}</div>
+           <div *ngIf="!user.isValid">{{user.validationError}}</div>
         </div>
     </div>
   `,
     styles: [
         `
-        .xinvisible { display:none};
         .bongo { padding:200px;}
   `],
 })
