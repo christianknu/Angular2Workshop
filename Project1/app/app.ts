@@ -8,13 +8,10 @@ import {iCurrentUser}  from './currentuser'
   selector: 'my-app',
   template: `<div class="container">
       <h2 class="form-signin-heading">{{title}}</h2>
-    <my-login (userLoggedIn)=updateUser($event) parent="Tonys Galaxy" [ngClass]="{xinvisible:user.isAuthed}"></my-login>
-	<div [ngClass]="{xinvisible:!user.isAuthed}" class="container-fluid"> I know you, {{user.extId}} of course :)  </div>
+   <my-login (userLoggedIn)=updateUser($event) *ngIf="!user.isAuthed" [parent]='title'></my-login>
+  	<div *ngIf="user.isAuthed" class="container-fluid"> I know you, {{user.extId}} of course :)  </div>
    </div>
   `,
-  styles: [`
-    .xinvisible { display:none};
-  `],
   directives: [LoginComponent]
 })
 
