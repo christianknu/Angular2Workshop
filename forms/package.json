@@ -1,0 +1,32 @@
+{
+  "name": "angular2-workshop-project1",
+  "version": "0.0.1",
+  "scripts": {
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common":  "2.0.0-rc.1",
+    "@angular/compiler":  "2.0.0-rc.1",
+    "@angular/core":  "2.0.0-rc.1",
+    "@angular/http":  "2.0.0-rc.1",
+    "@angular/platform-browser":  "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic":  "2.0.0-rc.1",
+    "@angular/router":  "2.0.0-rc.1",
+    "@angular/router-deprecated":  "2.0.0-rc.1",
+    "@angular/upgrade":  "2.0.0-rc.1",
+      "core-js": "^2.4.0",
+    "bootstrap": "^3.3.6",
+    "reflect-metadata": "0.1.1",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+     "angular2-in-memory-web-api": "0.0.10",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+     "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
+}

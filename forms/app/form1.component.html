@@ -1,0 +1,11 @@
+
+<div class="container">
+  <p>Form 1 :) Hello FormWorld </p>
+  <form #f=ngForm (ngSubmit)="onSubmit(f.value)">
+    <hr>
+    <input type="text" class="form-control" placeholder="Name" ngControl="name">
+    <hr>
+    <textarea class="form-control" rows="4" placeholder="Description" ngControl="description" ></textarea>
+    <button type="submit">Save</button>
+  </form>
+</div>
