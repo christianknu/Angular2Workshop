@@ -16,6 +16,7 @@ import {Form3Component} from './form3.component';
                <my-form1 *ngIf="currentForm.id === 1"></my-form1>
                <my-form2 *ngIf="currentForm.id === 2"></my-form2>
                <my-form3 *ngIf="currentForm.id === 3"></my-form3>
+                <my-form4 *ngIf="currentForm.id === 4"></my-form4>
             </div>
   `,
   styles: [`
@@ -33,7 +34,7 @@ import {Form3Component} from './form3.component';
 export class AppComponent implements OnInit {
   public title = 'Forms Galore!!!!';
  
-  forms = [{name:"Simple Form", id: 1},{name:"Validated Form", id: 2},{name:"Form with gravy", id: 3}];
+  forms = [{name:"Simple Form", id: 1},{name:"Control Group", id: 2},{name:"Form with gravy", id: 3},{name:"Formbuilder", id: 4}];
   currentForm = this.forms[0];
   //left here for educational purposes....
   constructor() { }

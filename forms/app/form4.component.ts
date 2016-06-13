@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 
 
 @Component({
-    selector: 'my-form3',
-    templateUrl: 'app/form3.component.html', 
+    selector: 'my-form4',
+    templateUrl: 'app/form4.component.html', 
 styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}
@@ -13,7 +13,7 @@ styles: [
 })
 
 
-export class Form3Component {
+export class Form4Component {
  formdata : string  = "";
  
     onSubmit(v:any) {
