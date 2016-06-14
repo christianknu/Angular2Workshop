@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Form1Component} from './form1.component';
 import {Form2Component} from './form2.component';
 import {Form3Component} from './form3.component';
+import {Form4Component} from './form4.component';
 
 @Component({
   selector: 'my-app',
@@ -27,7 +28,7 @@ import {Form3Component} from './form3.component';
     list-style-type: none;
 }
   `], 
-  directives: [Form1Component, Form2Component, Form3Component]
+  directives: [Form1Component, Form2Component, Form3Component,Form4Component]
 })
 
 

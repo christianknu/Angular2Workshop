@@ -12,7 +12,7 @@
     <div ngControlGroup="smallstuff" class="test" #spy>
     <input type="text" class="form-control" placeholder="Name" ngControl="name2" required #spy1>
         <p>{{spy1.className}}  </p>
-    <input type="number" class="form-control" placeholder="Name" ngControl="name3" #spy2 >
+    <input type="text" class="form-control" placeholder="telephone" ngControl="telephone" required minlength="5" maxlength="20" #spy2 >
     <p>{{spy2.className}}  </p>
     <input type="text" class="form-control" placeholder="Name" ngControl="name4" #spy3>
     <p>{{spy3.className}}  </p>

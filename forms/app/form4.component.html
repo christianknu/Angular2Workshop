@@ -1,25 +1,30 @@
-
 <div class="container">
   <p>Form 4 -Introducing FormBuilder</p>
+  <p>Example builds on </p>
+  <a href="http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview" target="_blank">http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview</a>
   
-  
- <form #f=ngForm (ngSubmit)="onSubmit(f.value)">
+ <form [ngFormModel]="userForm" (ngSubmit)="onSubmit()">
     <hr>
+
     <input type="text" class="form-control" placeholder="Name" ngControl="name">
+     <control-messages control="name"></control-messages>
     <hr>
     <textarea class="form-control" rows="4" placeholder="Description" ngControl="description" ></textarea>
     
-    <div ngControlGroup="smallstuff" class="test" #spy>
-    <input type="text" class="form-control" placeholder="Name" ngControl="name2" required #spy1>
-        <p>{{spy1.className}}  </p>
-    <input type="number" class="form-control" placeholder="Name" ngControl="name3" #spy2 >
-    <p>{{spy2.className}}  </p>
-    <input type="text" class="form-control" placeholder="Name" ngControl="name4" #spy3>
-    <p>{{spy3.className}}  </p>
-     <p>Yo : {{spy.className}}</p>
+    <div ngControlGroup="contact" >
+    <input type="text" class="form-control" placeholder="email1" ngControl="email1">
+     <control-messages control="contact.email1"></control-messages>
+    <input type="text" class="form-control" placeholder="email2" ngControl="email2"  >
+     <control-messages control="contact.email2"></control-messages>  
+    <input type="number" class="form-control" placeholder="telephonenr" ngControl="telephone" >
+    <control-messages control="contact.telephone"></control-messages>  
+
+    <input type="number" class="form-control" placeholder="Alternative telephone" ngControl="telephone2" >
+    <control-messages control="contact.telephone2"></control-messages>  
+     
      </div>
     
-    <button [disabled]="!f.valid" class="btn btn-primary" >Save</button>
+    <button [disabled]="!userForm.valid" class="btn btn-primary" >Save</button>
   </form>
   
     <p>This is what's going to the server</p>

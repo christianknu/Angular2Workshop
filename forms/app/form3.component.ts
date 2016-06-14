@@ -8,7 +8,6 @@ styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}
         .ng-valid[required] { border-left:5px solid #0f0;}
- 
   `]
 })
 
