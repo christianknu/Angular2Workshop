@@ -1,7 +1,5 @@
 <div class="container">
-  <p>Form 4 -Introducing FormBuilder</p>
-  <p>Example builds on </p>
-  <a href="http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview" target="_blank">http://plnkr.co/edit/6RkM0eRftf3KQpoDCktz?p=preview</a>
+  <p>Form 5 -Observing changes, listening in on valueChanges</p>
   
  <form [ngFormModel]="userForm" (ngSubmit)="onSubmit()">
     <hr>
@@ -19,8 +17,7 @@
     <input type="number" class="form-control" placeholder="telephonenr" ngControl="telephone" >
     <control-messages control="contact.telephone"></control-messages>  
     <input type="number" class="form-control" placeholder="Alternative telephone" ngControl="telephone2" >
-    <control-messages control="contact.telephone2"></control-messages>  
-     
+
      </div>
     
     <button [disabled]="!userForm.valid" class="btn btn-primary" >Save</button>
@@ -28,4 +25,11 @@
   
     <p>This is what's going to the server</p>
   <code>{{formdata}}</code>
+  <p>This is what eventemitter told me: All of it: </p>
+  <code>{{eventEmitterData}}</code>
+  <p>controlgroup</p>
+  <code>{{cgroupData}}</code>
+  
+    <p>Email1</p>
+  <code>{{email1Data}}</code>
 </div>

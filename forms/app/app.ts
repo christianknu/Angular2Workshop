@@ -3,6 +3,7 @@ import {Form1Component} from './form1.component';
 import {Form2Component} from './form2.component';
 import {Form3Component} from './form3.component';
 import {Form4Component} from './form4.component';
+import {Form5Component} from './form5.component';
 
 @Component({
   selector: 'my-app',
@@ -17,7 +18,8 @@ import {Form4Component} from './form4.component';
                <my-form1 *ngIf="currentForm.id === 1"></my-form1>
                <my-form2 *ngIf="currentForm.id === 2"></my-form2>
                <my-form3 *ngIf="currentForm.id === 3"></my-form3>
-                <my-form4 *ngIf="currentForm.id === 4"></my-form4>
+               <my-form4 *ngIf="currentForm.id === 4"></my-form4>
+               <my-form5 *ngIf="currentForm.id === 5"></my-form5>
             </div>
   `,
   styles: [`
@@ -28,14 +30,14 @@ import {Form4Component} from './form4.component';
     list-style-type: none;
 }
   `], 
-  directives: [Form1Component, Form2Component, Form3Component,Form4Component]
+  directives: [Form1Component, Form2Component, Form3Component,Form4Component, Form5Component]
 })
 
 
 export class AppComponent implements OnInit {
   public title = 'Forms Galore!!!!';
  
-  forms = [{name:"Simple Form", id: 1},{name:"Control Group", id: 2},{name:"Form with gravy", id: 3},{name:"Formbuilder", id: 4}];
+  forms = [{name:"Simple Form", id: 1},{name:"Control Group", id: 2},{name:"Form with gravy", id: 3},{name:"Formbuilder", id: 4}, {name:"Observing", id:5}];
   currentForm = this.forms[0];
   //left here for educational purposes....
   constructor() { }
