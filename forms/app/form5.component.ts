@@ -51,8 +51,8 @@ export class Form5Component implements OnInit {
     onSubmit() {
         if (this.userForm.dirty && this.userForm.valid) {
             this.formdata = JSON.stringify(this.userForm.value);
-            this.userForm.setPristine();
-            this.userForm.setUntouched();
+          //  this.userForm.setPristine();
+          //  this.userForm.setUntouched();
             this.setForm();
             
             return false;
