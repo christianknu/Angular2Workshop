@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import { FORM_PROVIDERS } from '@angular/common';
-import { FormBuilder, Validators } from '@angular/common';
-import { ControlMessages } from './control-messages.component';
+import {REACTIVE_FORM_DIRECTIVES,FormGroup, FormControl,Validators} from '@angular/forms';
+//import { ControlMessages } from './control-messages.component';
 import { ValidationService } from './validation.service';
 
 @Component({
     selector: 'my-form4',
     templateUrl: 'app/form4.component.html', 
-    directives: [ControlMessages],
+    directives: [REACTIVE_FORM_DIRECTIVES],  //ControlMessages,
 styles: [
         `
         .ng-invalid { border-left:5px solid #f00;}
@@ -17,26 +16,29 @@ styles: [
 
 
 export class Form4Component implements OnInit {
-    userForm:any;
+    userForm:FormGroup;
     formdata : string  = "";
     
-    constructor( private formBuilder : FormBuilder) {}
+    constructor() {}
         
     ngOnInit() {
         this.setForm();
     }
     
     setForm() {
-        this.userForm = this.formBuilder.group({
-            'name': ['', Validators.required],
-            'description': ['', Validators.nullValidator],
-            'contact':this.formBuilder.group ({
-                'email1' : ['', Validators.compose([Validators.required, ValidationService.emailValidator])], 
-                'email2' : ['', ValidationService.emptyOrEmailValidator], 
-                'telephone' : ['', Validators.nullValidator], 
-                'telephone2' : ['', Validators.nullValidator]       
+        
+        this.userForm =new FormGroup({
+             name: new FormControl('', Validators.required),
+             description: new FormControl('', Validators.nullValidator),
+            contact: new FormGroup ({
+                email1 : new FormControl('', [Validators.required, ValidationService.emailValidator]), 
+                email2 : new FormControl('', ValidationService.emptyOrEmailValidator), 
+                telephone : new FormControl ('', Validators.nullValidator), 
+                telephone2 : new FormControl ('', Validators.nullValidator)       
             }) 
-        });        
+        })
+        
+        
     }
  
     onSubmit() {
