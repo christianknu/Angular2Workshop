@@ -1,0 +1,45 @@
+<h2>Artifact Detail</h2>
+<div class="panel panel-info">
+  <div class="panel-body">
+    <form class="form-horizontal">
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Name</label>
+        <div class="col-xs-10">
+          <input class="form-control" [(ngModel)]="currentartifact.name" placeholder="name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Type</label>
+			<div class="col-xs-10">
+          <input class="form-control" [(ngModel)]="currentartifact.type" placeholder="type" />
+        </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Dungeon</label>
+        <div class="col-xs-10">
+              <select></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-2 control-label">Room</label>
+        <div class="col-xs-10">
+         <select></select>
+        </div>
+      </div>
+ 
+
+      </div>
+    </form>
+  </div>
+</div>
+ <div class="form-group">
+        <label class="col-xs-2 control-label">
+          <button class="btn btn-primary" (click)=saveProject()>Save</button></label>
+           <label class="col-xs-2 control-label">
+          <button class="btn btn-primary" (click)=cancelSave()>Cancel</button></label>
+</div>
+ 

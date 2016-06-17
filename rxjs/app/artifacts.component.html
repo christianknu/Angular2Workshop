@@ -1,0 +1,20 @@
+<h4> Artifacts </h4>
+ <button type="button" class="btn btn-primary" (click)=newArtifact()>New Artifact</button>
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Dungeon</th>
+			<th>Room</th>
+		</tr>
+		<tr *ngFor="let artifact of allArtifacts">
+			<td>{{artifact.name}}</td>
+			<td>{{artifact.type}}</td>
+			<td>{{artifact.dungeon}}</td>
+			<td>{{artifact.room}}</td>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
