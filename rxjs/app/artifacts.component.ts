@@ -14,13 +14,13 @@ export class ArtifactsComponent implements OnInit {
 	@Output() edit: EventEmitter<boolean> = new EventEmitter();
 	allRooms: any[];
 	allDungeons: any[];
-	allArtifacts:any[];
+	allArtifacts: any[];
 	hasDungeons = false;
 	hasRooms = false;
 
-	constructor(private dungeonService: DungeonService, 
-				private roomService: RoomService, 
-				private artifactService:ArtifactService) {}
+	constructor(private dungeonService: DungeonService,
+		private roomService: RoomService,
+		private artifactService: ArtifactService) { }
 
 	ngOnInit() {
 		this.getDungeons();
@@ -55,18 +55,16 @@ export class ArtifactsComponent implements OnInit {
 	getArtifacts() {
 		if (this.hasDungeons && this.hasRooms) {
 			this.artifactService.getArtifacts().subscribe((res: any) => {
-            this.allArtifacts = res;
-			
-			this.allArtifacts.forEach(element => {
-				let d = this.allDungeons.find((itm:any) => itm._id = element.dungeonId);
-				element.dungeon = d.name;
-				let r = this.allRooms.find((itm:any) => itm._id = element.roomId);
-				element.room = d.name;
-				
+				this.allArtifacts = res;
+
+				this.allArtifacts.forEach(element => {
+					let d = this.allDungeons.find((itm: any) => itm._id = element.dungeonId);
+					element.dungeon = d.name;
+					let r = this.allRooms.find((itm: any) => itm._id = element.roomId);
+					element.room = d.name;
+				});
+
 			});
-			
-			}
-		
-	}
+		}
 	}
 }

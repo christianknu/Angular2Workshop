@@ -6,39 +6,43 @@
       <div class="form-group">
         <label class="col-xs-2 control-label">Name</label>
         <div class="col-xs-10">
-          <input class="form-control" [(ngModel)]="currentartifact.name" placeholder="name" />
+          <input class="form-control" [(ngModel)]="myArtifact.name" placeholder="name" />
         </div>
       </div>
       <div class="form-group">
         <label class="col-xs-2 control-label">Type</label>
 			<div class="col-xs-10">
-          <input class="form-control" [(ngModel)]="currentartifact.type" placeholder="type" />
+          <input class="form-control" [(ngModel)]="myArtifact.type" placeholder="type" />
         </div>
 
         </div>
-      </div>
+      
 
       <div class="form-group">
         <label class="col-xs-2 control-label">Dungeon</label>
         <div class="col-xs-10">
-              <select></select>
+              <select [(ngModel)]="myArtifact.dungeonId">
+                <option>select</option>
+                  <option *ngFor="let d of allDungeons" value="{{d._id}}">{{d?.name}}</option>
+              </select>
         </div>
       </div>
       <div class="form-group">
         <label class="col-xs-2 control-label">Room</label>
         <div class="col-xs-10">
-         <select></select>
+              <select [(ngModel)]="myArtifact.roomId">
+                  <option *ngFor="let r of allRooms" value="{{r._id}}">{{r?.name}}</option>
+              </select>
         </div>
       </div>
  
-
-      </div>
+ 
     </form>
   </div>
 </div>
  <div class="form-group">
         <label class="col-xs-2 control-label">
-          <button class="btn btn-primary" (click)=saveProject()>Save</button></label>
+          <button class="btn btn-primary" (click)=saveArtifact()>Save</button></label>
            <label class="col-xs-2 control-label">
           <button class="btn btn-primary" (click)=cancelSave()>Cancel</button></label>
 </div>

@@ -12,18 +12,18 @@ import {ObserveComponent} from './observe.component';
 import {SearchComponent} from './search.component';
 
 import {ArtifactsComponent} from './artifacts.component';
-
+import {ArtifactDetailComponent} from './artifactdetail.component';
 
 @Component({
 	pipes: [AsyncPipe],
 	selector: 'my-app',
 	providers: [], //[PubSubService],
-	directives:[ObserveComponent, SearchComponent, ArtifactsComponent], // [searchComponent, observeComponent, ProjectsComponent, ProjectDetailComponent],
+	directives:[ObserveComponent, SearchComponent, ArtifactsComponent, ArtifactDetailComponent], 
 	template: `
 	  	    <div class="container-fluid">
       <my-observer></my-observer><hr>
 	  <my-artifacts *ngIf="!isAddingNewProject"  (edit)="switchMode($event)"></my-artifacts>
-	  <my-project-detail  *ngIf="isAddingNewProject" (edit)="switchMode($event)"></my-project-detail>
+	  <my-artifact-detail  *ngIf="isAddingNewProject" (edit)="switchMode($event)"></my-artifact-detail>
 	  <my-search></my-search><hr>
      </div>
 	 `,

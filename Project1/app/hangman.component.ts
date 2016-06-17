@@ -18,7 +18,7 @@ const TotalMoves = 6;
         <button  class="btn btn-lg btn-primary btn-block" (click)="startGame()" type="submit">Play</button>
     </div>
         <div class="smallpadd">
-        <span *ngFor="#letter of incorrectLetters">{{letter}} </span>
+        <span *ngFor="let letter of incorrectLetters">{{letter}} </span>
         </div>
         
         <!-- Help me Obi Wan, Someone cut out the code.......  -->  
