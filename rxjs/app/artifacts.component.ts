@@ -61,7 +61,7 @@ export class ArtifactsComponent implements OnInit {
 					let d = this.allDungeons.find((itm: any) => itm._id = element.dungeonId);
 					element.dungeon = d.name;
 					let r = this.allRooms.find((itm: any) => itm._id = element.roomId);
-					element.room = d.name;
+					element.room = r.name;
 				});
 
 			});
