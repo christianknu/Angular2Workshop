@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {LoginComponent} from './login.component';
-import {iCurrentUser}  from './currentuser'
+import {iCurrentUser}  from './currentuser';
+import {HangmanComponent} from './hangman.component';
 
 
 @Component({
@@ -10,9 +11,10 @@ import {iCurrentUser}  from './currentuser'
       <h2 class="form-signin-heading">{{title}}</h2>
    <my-login (userLoggedIn)=updateUser($event) *ngIf="!user.isAuthed" [parent]='title'></my-login>
   	<div *ngIf="user.isAuthed" class="container-fluid"> I know you, {{user.extId}} of course :)  </div>
+    <my-hangman *ngIf="user.isAuthed"></my-hangman>
    </div>
   `,
-  directives: [LoginComponent]
+  directives: [LoginComponent, HangmanComponent]
 })
 
 
