@@ -1,5 +1,6 @@
 import {Component, OnInit, OnChanges, Input, SimpleChange} from '@angular/core';
 import { WordService } from './word.service';
+import {Observable} from "rxjs/Observable";
 
 enum gameState { 
     Waiting, 
